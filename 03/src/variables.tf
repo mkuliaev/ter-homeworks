@@ -31,28 +31,16 @@ variable "vpc_name" {
   description = "VPC name"
 }
 
-#variable "subnet_id" {
-#  description = "Subnet ID"
-#  type        = string
-#}
-
-#variable "security_group_id" {
-#  description = "Security Group ID"
-#  type        = string
-#}
+############################################
 
 variable "each_vm" {
-#  description = "List of VM configurations"
   type = list(object({
     name   = string
     image  = string
     flavor = string
   }))
 }
-#variable "vms_ssh_root_key" {
-#  type        = string
-#  description = "SSH for VMs"
-#}
+
 ############################################
 
 variable "web_vm_count" {
