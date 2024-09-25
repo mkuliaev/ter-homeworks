@@ -28,7 +28,7 @@ variable "default_cidr" {
 variable "vpc_name" {
   type        = string
   default     = "develop"
-  description = "VPC network & subnet name"
+  description = "VPC net & sub name"
 }
 
 
@@ -59,7 +59,7 @@ variable "vms_resources" {
     core_fraction = number
     hdd_size      = number
     hdd_type      = string
-    # Добавьте другие параметры, если они есть
+   
   }))
 }
 
