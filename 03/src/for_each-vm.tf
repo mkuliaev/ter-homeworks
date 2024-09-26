@@ -1,11 +1,3 @@
-#variable "each_vm" {
-#  type = list(object({
-#    vm_name     = string
-#    cpu         = number
-#    ram         = number
-#    disk_volume = number
-#  }))
-#}
 
 resource "yandex_compute_instance" "db" {
   for_each = { for vm in var.db_vm_config : vm.vm_name => vm }
