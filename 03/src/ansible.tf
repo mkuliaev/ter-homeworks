@@ -18,4 +18,5 @@ resource "local_file" "inventory" {
      })
      filename = "${path.module}/inventory.yml"
    }
-   
+
+
