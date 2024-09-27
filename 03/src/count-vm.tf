@@ -4,8 +4,8 @@ resource "yandex_compute_instance" "web" {
   name = "web-${count.index + 1}"
 
   resources {
-    cores  = 2
-    memory = 2
+    cores  = var.count_vm_cores
+    memory = var.count_vm_memory
   }
 
   boot_disk {
@@ -16,7 +16,7 @@ resource "yandex_compute_instance" "web" {
 
   network_interface {
     subnet_id = var.subnet_id
-    nat       = true
+    nat       = var.storage_vm_nat
     security_group_ids = [var.security_group_id]
   }
 

@@ -83,7 +83,7 @@ variable "storage_disk_size" {
 variable "storage_disk_type" {
   type        = string
   default     = "network-hdd"
-  description = "network-hdd, network-ssd)"
+  description = "network-hdd, network-ssd"
 }
 
 
@@ -116,6 +116,20 @@ variable "storage_vm_memory" {
   default     = 4
   description = " memory"
 }
+
+
+variable "count_vm_cores" {
+  type        = number
+  default     = 2
+  description = " cores VM"
+}
+
+variable "count_vm_memory" {
+  type        = number
+  default     = 2
+  description = " memory"
+}
+
 
 variable "storage_vm_nat" {
   type        = bool
