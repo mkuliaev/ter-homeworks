@@ -18,7 +18,7 @@ resource "yandex_compute_instance" "db" {
 
   network_interface {
     subnet_id          = var.subnet_id
-    nat                = var.vm_nat
+    nat                = var.each_vm_nat
     security_group_ids = [var.security_group_id]
   }
 
@@ -27,7 +27,7 @@ resource "yandex_compute_instance" "db" {
   }
 
   scheduling_policy {
-    preemptible = var.vm_preemptible
+    preemptible = var.each_vm_preemptible
   }
 
   depends_on = [yandex_vpc_network.develop, yandex_vpc_subnet.develop]

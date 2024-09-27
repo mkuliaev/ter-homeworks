@@ -25,7 +25,7 @@ resource "yandex_compute_instance" "storage" {
 
   network_interface {
     subnet_id          = var.subnet_id
-    nat                = var.vm_nat
+    nat                = var.storage_vm_nat
     security_group_ids = [var.security_group_id]
   }
 

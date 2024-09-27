@@ -131,13 +131,30 @@ variable "count_vm_memory" {
 }
 
 
-variable "vm_nat" {
+variable "count_vm_nat" {
   type        = bool
   default     = true
   description = " NAT "
 }
 
-variable "vm_preemptible" {
+variable "each_vm_nat" {
+  type        = bool
+  default     = true
+  description = " NAT "
+}
+variable "storage_vm_nat" {
+  type        = bool
+  default     = true
+  description = " NAT "
+}
+
+variable "count_vm_preemptible" {
+  type        = bool
+  default     = true
+  description = "preemptible"
+}
+
+variable "each_vm_preemptible" {
   type        = bool
   default     = true
   description = "preemptible"
