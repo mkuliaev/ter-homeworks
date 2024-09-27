@@ -131,12 +131,17 @@ variable "count_vm_memory" {
 }
 
 
-variable "storage_vm_nat" {
+variable "vm_nat" {
   type        = bool
   default     = true
   description = " NAT "
 }
 
+variable "vm_preemptible" {
+  type        = bool
+  default     = true
+  description = "preemptible"
+}
 
 variable "subnet_id" {
   description = "Subnet ID"
@@ -158,4 +163,3 @@ variable "vm_platform_id" {
   default     = "standard-v1"
   description = "Platform ID "
 }
-
