@@ -25,13 +25,13 @@ variable "default_cidr" {
   description = "https://cloud.yandex.ru/docs/vpc/operations/subnet-create"
 }
 
+
 variable "vpc_name" {
   type        = string
   default     = "develop"
   description = "VPC name"
 }
 
-############################################
 
 variable "each_vm" {
   type = list(object({
@@ -41,7 +41,6 @@ variable "each_vm" {
   }))
 }
 
-############################################
 
 variable "web_vm_count" {
   type        = number
@@ -81,11 +80,49 @@ variable "storage_disk_size" {
   description = "Size disk "
 }
 
+variable "storage_disk_type" {
+  type        = string
+  default     = "network-hdd"
+  description = "network-hdd, network-ssd)"
+}
+
+
 variable "storage_vm_image_id" {
   type        = string
   default     = "fd8i352834u7dsm7rfbv"
   description = "Image ID "
 }
+
+variable "storage_vm_name" {
+  type        = string
+  default     = "storage"
+  description = "Name VM"
+}
+
+variable "storage_vm_platform_id" {
+  type        = string
+  default     = "standard-v1"
+  description = "Platform ID "
+}
+
+variable "storage_vm_cores" {
+  type        = number
+  default     = 2
+  description = " cores VM"
+}
+
+variable "storage_vm_memory" {
+  type        = number
+  default     = 4
+  description = " memory"
+}
+
+variable "storage_vm_nat" {
+  type        = bool
+  default     = true
+  description = " NAT "
+}
+
 
 variable "subnet_id" {
   description = "Subnet ID"
@@ -102,4 +139,9 @@ variable "vms_ssh_root_key" {
   description = "SSH "
 }
 
+variable "vm_platform_id" {
+  type        = string
+  default     = "standard-v1"
+  description = "Platform ID "
+}
 

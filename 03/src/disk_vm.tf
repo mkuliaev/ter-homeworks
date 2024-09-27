@@ -3,18 +3,18 @@ resource "yandex_compute_disk" "storage_disk" {
 
   name  = "storage-disk-${count.index}"
   size  = var.storage_disk_size
-  type  = "network-hdd"
+  type  = var.storage_disk_type
   zone  = var.default_zone
 }
 
 resource "yandex_compute_instance" "storage" {
-  name        = "storage"
-  platform_id = "standard-v1"
+  name        = var.storage_vm_name
+  platform_id = var.storage_vm_platform_id
   zone        = var.default_zone
 
   resources {
-    cores  = 2
-    memory = 4
+    cores  = var.storage_vm_cores
+    memory = var.storage_vm_memory
   }
 
   boot_disk {
@@ -25,7 +25,7 @@ resource "yandex_compute_instance" "storage" {
 
   network_interface {
     subnet_id          = var.subnet_id
-    nat                = true
+    nat                = var.storage_vm_nat
     security_group_ids = [var.security_group_id]
   }
 
